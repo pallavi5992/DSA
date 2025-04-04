@@ -18,6 +18,36 @@ function diff_Ele(arr1,arr2){
   return res
   }
   console.log(diff_Ele([1,2,3,4,5,6],[2,4,5,6])) 
+
+const arr1 = [1, 2, 3, 4, 5, 6];
+const arr2 = [2, 4, 5, 6];
+
+function dif_ele(arr1, arr2) {
+    let res = [];
+    
+    // Loop through arr1
+    for (let i = 0; i < arr1.length; i++) {
+        let flag = false;
+
+        // Loop through arr2
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                flag = true;
+                break; // Break out of inner loop if match is found
+            }
+        }
+
+        // If no match found, add the element to result
+        if (!flag) {
+            res.push(arr1[i]);
+        }
+    }
+
+    return res;
+}
+
+console.log(dif_ele(arr1, arr2)); // Output: [1, 3]
+
 //(0) remove Duplicate element ffrom 1 arrays
 //M-1
 let array123=[1,2,3,4,5,6,7,8,6,2,3,6]
